@@ -26,7 +26,7 @@ client.on("message", async message => {
         let textchannels = guild.channels.filter(e => e.type === "text")
         let voicechannels = guild.channels.filter(e => e.type === "voice")
           var embed = new Discord.RichEmbed()
-          .setColor("#000000")
+          .setColor("#da9873")
           .setTitle(`معلومات عن السيرفر`)
           .setDescription(`معلومات عن : ${guild.name}`)
           .addField("صاحب السيرفر :", `${guild.owner}`, true)
@@ -72,7 +72,7 @@ client.on('message', function(message) {
   message.channel.send("**تم ارسال الرابط برسالة خاصة**")
 
 message.author.send(`**مدة الرابط : يـوم
-دد استخدامات الرابط : 25**`)
+عدد استخدامات الرابط : 25**`)
 
     }
 });
@@ -350,19 +350,19 @@ client.on('message', msg => {
 
 
 client.on('message', message => {
-    if (message.content === 'help') {
+    if (message.content === 'thelp') {
         let helpEmbed = new Discord.RichEmbed()
-        .setTitle('***شكرا لاستخدامكم البوت هذه قائمة المساعدة...***')
-        .setDescription('**برفكس البوت (t)**')
+        .setTitle('***__شكرا لاستخدامكم البوت هذه قائمة المساعدة__...**')
+        .setDescription('***برفكس البوت (t)***')
         .addField('**tban ==>لتبنيد شخص ما من السيرفر** ')
         .addField('**tkick ==> لطرد شخص من السيرفر**')
         .addField('**tmute ==>لعمل ميوت للشخص المراد**')
         .addField('**tunmute ==> لفك الميوت عن الشخص**')
         .addField('**tbc == >رسالة جماعية لاعضاء السيرفر خاص**')
-        .addField('**tmc ==>لاغلاق الشات')
-        .addField('**tumc ==> لفتح الشات')
-        .addField('**tavatar ==> للحصول على الصورة الرمزية')
-        .addField('**tnew ==>لفتح تذكرة في حالة حدوث مشكلة ')
+        .addField('**tmc ==>لاغلاق الشات**')
+        .addField('**tumc ==> لفتح الشات**')
+        .addField('**tavatar ==> للحصول على الصورة الرمزية**')
+        .addField('**tnew ==>لفتح تذكرة في حالة حدوث مشكلة **')
 		.setColor('#275BF0')
       message.channel.send(helpEmbed);
     }
