@@ -8,7 +8,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Death Shop`,"http://twitch.tv/Death Shop")
+client.user.setGame(`Tops | thelp`,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
@@ -354,15 +354,15 @@ client.on('message', message => {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('***شكرا لاستخدامكم البوت هذه قائمة المساعدة...***')
         .setDescription('**برفكس البوت (t)**')
-        .addField('')
-        .addField('')
-        .addField('')
-        .addField('')
-        .addField('')
-        .addField('')
-        .addField('')
-        .addField('')
-        .setFooter('')
+        .addField('**tban ==>لتبنيد شخص ما من السيرفر** ')
+        .addField('**tkick ==> لطرد شخص من السيرفر**')
+        .addField('**tmute ==>لعمل ميوت للشخص المراد**')
+        .addField('**tunmute ==> لفك الميوت عن الشخص**')
+        .addField('**tbc == >رسالة جماعية لاعضاء السيرفر خاص**')
+        .addField('**tmc ==>لاغلاق الشات')
+        .addField('**tumc ==> لفتح الشات')
+        .addField('**tavatar ==> للحصول على الصورة الرمزية')
+        .addField('**tnew ==>لفتح تذكرة في حالة حدوث مشكلة ')
 		.setColor('#275BF0')
       message.channel.send(helpEmbed);
     }
