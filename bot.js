@@ -341,21 +341,22 @@ client.on('message', msg => {
 client.on('message', message => {
     if (message.content === 'thelp') {
         let helpEmbed = new Discord.RichEmbed()
-        .setTitle( ' شكرا لاستخدامكم البوت هذه قائمة المساعدة ')
-        .setDescription( ' برفكس البوت t ' )
-        .addField(' tban ==>لتبنيد شخص ما من السيرفر ')
-        .addField(' tkick ==> لطرد شخص من السيرفر ')
-        .addField(' tmute ==>لعمل ميوت للشخص المراد')
-        .addField(' tunmute ==> لفك الميوت عن الشخص')
-        .addField(' tbc == >رسالة جماعية لاعضاء السيرفر خاص')
-        .addField(' tmc ==>لاغلاق الشات')
-        .addField(' tumc ==> لفتح الشات')
-        .addField(' tavatar ==> للحصول على الصورة الرمزية')
-        .addField(' tnew ==>لفتح تذكرة في حالة حدوث مشكلة ')
+        .setTitle( ' شكرا لاستخدامكم البوت هذه قائمة المساعدة ');
+        .setDescription( ' برفكس البوت t ' );
+        .addField(' tban ==>لتبنيد شخص ما من السيرفر ');
+        .addField(' tkick ==> لطرد شخص من السيرفر ');
+        .addField(' tmute ==>لعمل ميوت للشخص المراد');
+        .addField(' tunmute ==> لفك الميوت عن الشخص');
+        .addField(' tbc == >رسالة جماعية لاعضاء السيرفر خاص');
+        .addField(' tmc ==>لاغلاق الشات');
+        .addField(' tumc ==> لفتح الشات');
+        .addField(' tavatar ==> للحصول على الصورة الرمزية');
+        .addField(' tnew ==>لفتح تذكرة في حالة حدوث مشكلة ');
         .setColor('#275BF0')
       message.channel.send(helpEmbed);
     }
 });
+
 
 client.on("message", (message) => {
     /// DREAM
