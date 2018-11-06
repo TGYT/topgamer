@@ -305,17 +305,6 @@ client.on("message", message => {
 });
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Tops Server | thelp`,"http://twitch.tv/S-F")
-client.user.setStatus("dnd")
-});
-
 
 client.on('message', msg => {
   if (msg.content === 'هلا') {
@@ -352,8 +341,8 @@ client.on('message', msg => {
 client.on('message', message => {
     if (message.content === 'thelp') {
         let helpEmbed = new Discord.RichEmbed()
-        .setTitle('***__شكرا لاستخدامكم البوت هذه قائمة المساعدة__...**')
-        .setDescription('***برفكس البوت (t)***')
+        .setTitle('**__شكرا لاستخدامكم البوت هذه قائمة المساعدة__...**')
+        .setDescription('**برفكس البوت (t)**')
         .addField('**tban ==>لتبنيد شخص ما من السيرفر** ')
         .addField('**tkick ==> لطرد شخص من السيرفر**')
         .addField('**tmute ==>لعمل ميوت للشخص المراد**')
@@ -431,6 +420,19 @@ client.on("message", (message) => {
 client.on('guildMemberAdd', member=> {
     member.addRole(member.guild.roles.find("Tops","Tops"));
     });
+
+
+
+client.on('message', message => {
+    if (message.content === 'tavatar') {
+      // Remove the "var" line; it isn't necessary.
+      let embed = new Discord.RichEmbed()
+      // Replace "message.member" with "message.author"
+    .setImage(message.author.avatarURL)
+    .setColor('#275BF0')
+      message.channel.send(embed)
+    }
+});
 	
 	
 	
