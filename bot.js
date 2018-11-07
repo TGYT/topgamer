@@ -348,9 +348,12 @@ client.on('message', message => {
         .addField('mute', 'لاعطاء ميوت لشخص ما')
         .addField('unmute', 'لفك الميوت عن الشخص')
         .addField('link', 'للحصول على رابط للسيرفر')
-        .addField('avatar', 'للحصول على صورتك الرمزية')
+        .addField('ping', 'للحصول على البنق حقك')
+        .addField('bot', 'للحصول على معلومات البوت')
+        .addField('dr', 'لحذف الروم لي تكتب بيه الامر')
         .addField('mc', 'لغلق الشات')
         .addField('umc', 'لفتح الشات')
+        .addField('tnew', 'لفتح تذكرة في حالة حدوث مشكلة')
         .addField('bc', 'رسالة لجميع الاعضاء')
         .setFooter('شكرا لاستخدامكم البوت')
         .setColor('#40e0d0')
@@ -358,6 +361,41 @@ client.on('message', message => {
     }
 });
 
+
+client.on('message', function(message) {
+    if (!message.member.hasPermissions(['ADMINISTRATOR'])){
+            let command = message.content.split(" ")[0];
+        if(message.content.includes('discord.gg')){
+        message.reply (' ')
+           if(!message.channel.guild) return message.reply('** This command only for servers**');
+     message.member.addRole(message.guild.roles.find('name', 'Muted')); 
+    const embed500 = new Discord.RichEmbed()
+      .setTitle(":x: | تمت معاقبتك")
+            .addField(`** لقد قمت بمخالفة قوانين السيرفر من خلال نشر سيرفرات اخرى  **` , `**ان كأن هاذه الميوت عن طريق الخطأ تواصل مع احد اعضاء الادارة**`)
+      .addField(`Dream`,`CopyRight`)
+            .setColor("c91616")
+            .setThumbnail(`${message.author.avatarURL}`)
+            .setAuthor(message.author.username, message.author.avatarURL) 
+        .setFooter(`${message.guild.name} Server`)
+     message.channel.send(embed500) 
+    
+        
+    }
+    }
+})
+
+
+ client.on('message' , message => {
+  var prefix = "t";
+  if(message.author.bot) return;
+  if(message.content.startsWith(prefix + "ping")) {
+ message.channel.send('Pong...').then((msg) => {
+      msg.edit(`\`\`\`javascript\nTime taken: ${msg.createdTimestamp - message.createdTimestamp} ms.\nDiscord API: ${Math.round(client.ping)} ms.\`\`\``);
+ })
+  }  
+ });
+ 
+ 
 
 client.on("message", (message) => {
     /// DREAM
@@ -417,9 +455,53 @@ client.on("message", (message) => {
 
 
 
+
+
+
+
+
+
+
+
+
+client.on("message", (message) => {
+    if (message.content.startsWith('tdr')) {
+        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
+
+        let args = message.content.split(' ').slice(1);
+        let channel = message.client.channels.find('name', args.join(' '));
+        if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
+        channel.delete()
+    }
+});
+
+
+
 client.on('guildMemberAdd', member=> {
     member.addRole(member.guild.roles.find("Tops","Tops"));
     });
+
+
+client.on('message', message => {
+    if (message.content === "tbot") { // البريفكس و الامر
+           if(!message.channel.guild) return message.reply('** This command only for servers **');
+    let embed = new Discord.RichEmbed()
+ .setColor('RANDOM')
+ .addField("**اسم السيرفر**", message.guild.name)
+ .addField("**عدد السيرفرات الي فيها البوت:**" , client.guilds.size)
+ .addField("**المستخدمين:**", client.users.size)
+ .addField("**قنوات:**", client.channels.size)
+message.channel.sendEmbed(embed);
+   }
+});
+
+
+
+
+
+
+
+
 
 
 
