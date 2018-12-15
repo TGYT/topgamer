@@ -17,10 +17,10 @@ client.on('message', msg => {
       let args = msg.content.split(' ').slice(1)
       if (!args[0]) return msg.reply(`**منشن الشخص اولا**`)
       if (!args[1]) return msg.reply(`**ما هي الرساله المطلوب ارسالها**`)
-      let alpha = msg.mentions.roles.first()
+      let alpha = msg.mentions.members.first()
       if (!alpha) return msg.reply(`**يجب تحديد الشخص**`)
       let alphaEmbed = new Discord.RichEmbed()
-      .setTitle(`**رسالة جديده لك من شخص ما**`)
+      .setTitle(`**رسالة جديده لك**`)
       .setDescription(args.join(" "))
 
       client.users.get(`${alpha.id}`).send(alphaEmbed)
@@ -28,6 +28,30 @@ client.on('message', msg => {
     }
 });
 
+
+
+client.on('message', message => {
+    if (message.author.id === client.user.id) return;
+    if (message.guild) {
+   let embed = new Discord.RichEmbed()
+    let args = message.content.split(' ').slice(1).join(' ');
+if(message.content.split(' ')[0] == prefix + 'bc1') {
+    if (!args[1]) {
+return;
+}
+        message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('SEND_MESSAGES')) return;
+            var bc = new Discord.RichEmbed()
+            .addField(' » الرسالة : ', args)
+            .setColor('#ff0000')
+            // m.send(`[${m}]`);
+            m.send(`${m}`,{embed: bc});
+        });
+    }
+    } else {
+        return;
+    }
+});
 
 client.on("message", async message => {
         if(!message.channel.guild) return;
