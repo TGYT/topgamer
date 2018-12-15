@@ -17,7 +17,7 @@ client.on('message', msg => {
       let args = msg.content.split(' ').slice(1)
       if (!args[0]) return msg.reply(`**منشن الشخص اولا**`)
       if (!args[1]) return msg.reply(`**ما هي الرساله المطلوب ارسالها**`)
-      let alpha = msg.mentions.members.first()
+      let alpha = msg.mentions.roles.first()
       if (!alpha) return msg.reply(`**يجب تحديد الشخص**`)
       let alphaEmbed = new Discord.RichEmbed()
       .setTitle(`**رسالة جديده لك من شخص ما**`)
