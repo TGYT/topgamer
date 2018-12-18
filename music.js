@@ -20,7 +20,76 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "r";
+const prefix = "$";
+
+client.on('message', message => {
+     if (message.content === "سلام عليكم") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(' **وعليكم السلام** ')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+     if (message.content === "احا") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(' **عيييييب** ')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+     if (message.content === "صمك") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(' **صمك انت** ')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+     if (message.content === " برب") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(' ** تييت** ')
+  message.channel.sendEmbed(embed);
+    }
+});
+client.on('message', message => {
+     if (message.content === " توب") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(' ** توب مو موجود الحين ** ')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+     if (message.content === " هاي") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(' ** هاااايي** ')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+client.on('message', message => {
+     if (message.content === "كيف حالك") {
+      const embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setDescription(' **أحسن منك** ')
+  message.channel.sendEmbed(embed);
+    }
+});
+
+
+
+
+
+
+
 
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
